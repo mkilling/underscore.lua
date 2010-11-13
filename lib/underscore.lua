@@ -384,6 +384,16 @@ function Underscore.functions()
 	return Underscore.keys(Underscore.funcs)
 end
 
+-- helper functions
+
+function Underscore.funcs.add(...)
+	local ret = 0
+	for i,v in ipairs(arg) do
+		ret = ret + v
+	end
+	return ret
+end
+
 -- add aliases
 Underscore.methods = Underscore.functions
 
