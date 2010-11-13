@@ -88,6 +88,16 @@ iterator_functions:
         _.reduce({1,2,3}, 0, function(memo, i) return memo+i end)
         => 6
 
+    - name:
+        sum
+      params:
+        iter
+      description: |
+        Returns the sum of all elements in iter
+      example: |
+        _.sum({1,2,3,4})
+        => 10
+
     - name: 
         max
       params: 
