@@ -176,6 +176,14 @@ function Underscore.funcs.pluck(list, propertyName)
 	return Underscore.funcs.map(list, function(i) return i[propertyName] end)
 end
 
+function Underscore.funcs.pluck_all(lists)
+	ret = {}
+	for k,v in pairs(lists[1]) do
+		ret[k] = Underscore.funcs.pluck(lists, k)
+	end
+	return ret
+end
+
 function Underscore.funcs.min(list, func)
 	func = func or Underscore.identity
 	

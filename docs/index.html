@@ -39,6 +39,9 @@
             <a href='#pluck'>pluck</a>
           </li>
           <li>
+            <a href='#pluck_all'>pluck_all</a>
+          </li>
+          <li>
             <a href='#reduce'>reduce</a>
           </li>
           <li>
@@ -292,6 +295,14 @@
           </p>
           <p class='description'>An convenient version of the common use-case of mapextracting a list of properties.</p>
           <pre class='example'>_.pluck({ {id=1}, {id=2}, {id=3} }, 'id') &#x000A;=> { 1, 2, 3 }</pre>
+        </div>
+        <div class='function' id='pluck_all'>
+          <p>
+            <strong class='name'>pluck_all</strong>
+            <code>_.pluck_all(iter)</code>
+          </p>
+          <p class='description'>pluck all the elements from the lists in iter using the keys from the first list as property names</p>
+          <pre class='example'>_.pluck({ {name="alice",age=20}, {name="bob",age=25}, {name="mallory",age=60} })&#x000A;=> { name={"alice","bob","mallory"}, age={20,25,60} }</pre>
         </div>
         <div class='function' id='reduce'>
           <p>

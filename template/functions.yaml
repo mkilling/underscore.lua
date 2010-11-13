@@ -86,6 +86,16 @@ iterator_functions:
       example: |
         _.pluck({ {id=1}, {id=2}, {id=3} }, 'id') 
         => { 1, 2, 3 }
+        
+    - name:
+        pluck_all
+      params:
+        iter
+      description:
+        pluck all the elements from the lists in iter using the keys from the first list as property names
+      example: |
+        _.pluck({ {name="alice",age=20}, {name="bob",age=25}, {name="mallory",age=60} })
+        => { name={"alice","bob","mallory"}, age={20,25,60} }
 
     - name: 
         reduce
