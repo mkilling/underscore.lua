@@ -394,6 +394,18 @@ function Underscore.funcs.add(...)
 	return ret
 end
 
+function Underscore.funcs.subtract(...)
+	local ret = nil
+	for i, v in ipairs(arg) do
+		if not ret then
+			ret = v
+		else
+			ret = ret - v
+		end
+	end
+	return ret or 0
+end
+
 -- add aliases
 Underscore.methods = Underscore.functions
 
