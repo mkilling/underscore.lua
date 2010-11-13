@@ -200,6 +200,10 @@ function Underscore.funcs.max(list, func)
 	end).item
 end
 
+function Underscore.funcs.sum(list)
+	return Underscore.funcs.reduce(list, 0, Underscore.funcs.add)
+end
+
 function Underscore.funcs.to_array(list)
 	local array = {}
 	for i in Underscore.iter(list) do
