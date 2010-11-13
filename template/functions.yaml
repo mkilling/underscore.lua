@@ -389,6 +389,29 @@ function_functions:
         welcome = _.compose(print, greet, exclaim) 
         welcome('moe') 
         => hi: moe!
+
+helper_functions:
+  pretty: Helper Functions
+  functions:
+    - name:
+        add
+      description:
+        Adds up an arbitrary number of arguments. Useful for _.reduce constructs.
+      example: |
+        _.add(2,4)
+        => 6
+        _.add(2,4,6)
+        => 12
+    - name:
+        subtract
+      description:
+        Subtract arguments after the first one from the first one. Useful for ._reduce constructs.
+      example: |
+        _.subtract(10,4)
+        => 6
+        _.subtract(10,4,2)
+        => 2
+
 utility_functions:
   pretty: Utility Functions
   functions:    
