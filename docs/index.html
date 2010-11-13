@@ -42,6 +42,9 @@
             <a href='#reduce'>reduce</a>
           </li>
           <li>
+            <a href='#sum'>sum</a>
+          </li>
+          <li>
             <a href='#max'>max</a>
           </li>
           <li>
@@ -124,6 +127,15 @@
           </li>
           <li>
             <a href='#compose'>compose</a>
+          </li>
+        </ul>
+        <h3>Helper Functions</h3>
+        <ul>
+          <li>
+            <a href='#add'>add</a>
+          </li>
+          <li>
+            <a href='#subtract'>subtract</a>
           </li>
         </ul>
         <h3>Utility Functions</h3>
@@ -292,6 +304,14 @@
           </p>
           <p class='description'>Boils down a list of values into a single value. Memo is the initial state of the reduction, and each successive step of it should be returned by func.</p>
           <pre class='example'>_.reduce({1,2,3}, 0, function(memo, i) return memo+i end)&#x000A;=> 6</pre>
+        </div>
+        <div class='function' id='sum'>
+          <p>
+            <strong class='name'>sum</strong>
+            <code>_.sum(iter)</code>
+          </p>
+          <p class='description'>Returns the sum of all elements in iter</p>
+          <pre class='example'>_.sum({1,2,3,4})&#x000A;=> 10</pre>
         </div>
         <div class='function' id='max'>
           <p>
@@ -511,6 +531,23 @@
           </p>
           <p class='description'>Returns the composition of a list of functions, where each function consumes the return value of the function that follows. In math terms, composing the functions f(), g(), and h() produces f(g(h())).</p>
           <pre class='example'>greet = function(name) &#x000A;  return "hi: "..name &#x000A;end &#x000A;exclaim = function(statement) &#x000A;  return statement.."!" &#x000A;end &#x000A;welcome = _.compose(print, greet, exclaim) &#x000A;welcome('moe') &#x000A;=> hi: moe!</pre>
+        </div>
+        <h3>Helper Functions</h3>
+        <div class='function' id='add'>
+          <p>
+            <strong class='name'>add</strong>
+            <code>_.add()</code>
+          </p>
+          <p class='description'>Adds up an arbitrary number of arguments. Useful for _.reduce constructs.</p>
+          <pre class='example'>_.add(2,4)&#x000A;=> 6&#x000A;_.add(2,4,6)&#x000A;=> 12</pre>
+        </div>
+        <div class='function' id='subtract'>
+          <p>
+            <strong class='name'>subtract</strong>
+            <code>_.subtract()</code>
+          </p>
+          <p class='description'>Subtract arguments after the first one from the first one. Useful for ._reduce constructs.</p>
+          <pre class='example'>_.subtract(10,4)&#x000A;=> 6&#x000A;_.subtract(10,4,2)&#x000A;=> 2</pre>
         </div>
         <h3>Utility Functions</h3>
         <div class='function' id='functions'>

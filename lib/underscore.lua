@@ -212,6 +212,10 @@ function Underscore.funcs.max(list, func)
 	end).item
 end
 
+function Underscore.funcs.sum(list)
+	return Underscore.funcs.reduce(list, 0, Underscore.funcs.add)
+end
+
 function Underscore.funcs.to_array(list)
 	local array = {}
 	for i in Underscore.iter(list) do
@@ -394,6 +398,28 @@ end
 
 function Underscore.functions() 
 	return Underscore.keys(Underscore.funcs)
+end
+
+-- helper functions
+
+function Underscore.funcs.add(...)
+	local ret = 0
+	for i,v in ipairs(arg) do
+		ret = ret + v
+	end
+	return ret
+end
+
+function Underscore.funcs.subtract(...)
+	local ret = nil
+	for i, v in ipairs(arg) do
+		if not ret then
+			ret = v
+		else
+			ret = ret - v
+		end
+	end
+	return ret or 0
 end
 
 -- add aliases
